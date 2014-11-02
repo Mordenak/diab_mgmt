@@ -60,7 +60,7 @@ class MarkersController < ApplicationController
     end
 
     def marker_params
-      params[:marker].permit(:id, :blood_sugar, :carbs, :units)
+      params[:marker].permit(:id, :blood_sugar, :carbs, :units, :notes)
     end
 
 end

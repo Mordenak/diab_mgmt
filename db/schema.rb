@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20141102181400) do
     t.integer  "blood_sugar"
     t.float    "units"
     t.integer  "carbs"
+    t.string   "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

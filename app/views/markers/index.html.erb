@@ -13,6 +13,7 @@
         <th>Blood Sugar</th>
         <th>Carbs</th>
         <th>Units</th>
+        <th>Notes</th>
         <th>Created At</th>
         <th>Options</th>
       </thead>
@@ -23,7 +24,8 @@
                 <td><%= marker.blood_sugar %></td>
                 <td><%= marker.carbs %></td>
                 <td><%= marker.units %></td>
-                <td><%= marker.created_at %></td>
+                <td><%= marker.notes %></td>
+                <td><%= marker.created_at.localtime.strftime('%m/%d/%y - %H:%M:%S') %></td>
                 <td><%= link_to 'Edit', edit_marker_path(marker) %> | <%= link_to 'Destroy', marker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
             </tr>

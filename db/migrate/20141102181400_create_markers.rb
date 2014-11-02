@@ -6,6 +6,8 @@ class CreateMarkers < ActiveRecord::Migration
       t.column :units, :float
       t.column :carbs, :integer
 
+      t.column :notes, :string
+
       t.timestamps
     end
   end
