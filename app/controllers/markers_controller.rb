@@ -35,7 +35,7 @@ class MarkersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @marker.update(marker_parms)
+      if @marker.update(marker_params)
         format.html { redirect_to @marker, notice: 'Marker updated.' }
         format.json { head :no_content }
       else
