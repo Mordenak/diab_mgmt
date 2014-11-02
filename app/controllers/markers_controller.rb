@@ -1,6 +1,6 @@
 class MarkersController < ApplicationController
 
-  before_action :set_marker, only: [:show, :edit, :destroy]
+  before_action :set_marker, only: [:show, :edit, :update, :destroy]
 
   def index
     @markers = Marker.all
@@ -60,7 +60,7 @@ class MarkersController < ApplicationController
     end
 
     def marker_params
-      params[:marker].permit(:id, :blood_sugar, :carbs, :units, :notes)
+      params[:marker].permit(:id, :blood_sugar, :carbs, :units, :notes, :created_at)
     end
 
 end
