@@ -1,29 +1,36 @@
-<h1>Markers#index</h1>
+<h1>Records</h1>
 
 
-<%= link_to 'New Marker', action: 'new', controller: 'markers' %>
+<!-- <%= link_to 'New Marker', action: 'new', controller: 'markers' %> -->
+<form id="serverLink" action="markers/new">
+  <input type="submit" class="btn btn-default" value="Add New Record">
+</form>
 
 <% if !@markers.empty? %>
-  <table>
-    <thead>
-      <th>Blood Sugar</th>
-      <th>Carbs</th>
-      <th>Units</th>
-      <th>Created At</th>
-    </thead>
-    <tbody>
-        <% @markers.each do |marker| %>
-          <tr>
-            <% if marker %>
-              <td><%= marker.blood_sugar %></td>
-              <td><%= marker.carbs %></td>
-              <td><%= marker.units %></td>
-              <td><%= marker.created_at %></td>
-            <% end %>
-          </tr>
-        <% end %>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table sortable table-hover table-bordered table-condensed">
+      <thead>
+        <th>Blood Sugar</th>
+        <th>Carbs</th>
+        <th>Units</th>
+        <th>Created At</th>
+        <th>Options</th>
+      </thead>
+      <tbody>
+          <% @markers.each do |marker| %>
+            <tr>
+              <% if marker %>
+                <td><%= marker.blood_sugar %></td>
+                <td><%= marker.carbs %></td>
+                <td><%= marker.units %></td>
+                <td><%= marker.created_at %></td>
+                <td><%= link_to 'Edit', edit_marker_path(marker) %> | <%= link_to 'Destroy', marker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
 <% else  %>
   There are no records at this time.
 <% end %>

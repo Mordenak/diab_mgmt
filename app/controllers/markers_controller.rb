@@ -1,12 +1,16 @@
 class MarkersController < ApplicationController
 
-  before_action :set_marker, only: [:show]
+  before_action :set_marker, only: [:show, :edit, :destroy]
 
   def index
     @markers = Marker.all
   end
 
   def show
+
+  end
+
+  def edit
 
   end
 
@@ -29,6 +33,25 @@ class MarkersController < ApplicationController
     end
   end
 
+  def update
+    respond_to do |format|
+      if @marker.update(marker_parms)
+        format.html { redirect_to @marker, notice: 'Marker updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @marker.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @marker.destroy
+    respond_to do |format|
+      format.html { redirect_to markers_url }
+      format.json { head :no_content }
+    end
+  end
 
   private
 

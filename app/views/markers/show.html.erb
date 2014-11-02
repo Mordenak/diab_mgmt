@@ -1,21 +1,23 @@
 
-<table>
-  <thead>
-    <th>Blood Sugar</th>
-    <th>Carbs</th>
-    <th>Units</th>
-    <th>Created At</th>
-  </thead>
-  <tbody>
-    <tr>
-      <% if @marker %>
-        <td><%= @marker.blood_sugar %></td>
-        <td><%= @marker.carbs %></td>
-        <td><%= @marker.units %></td>
-        <td><%= @marker.created_at %></td>
-      <% end %>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table sortable table-hover table-bordered table-condensed">
+    <thead>
+      <th>Blood Sugar</th>
+      <th>Carbs</th>
+      <th>Units</th>
+      <th>Created At</th>
+    </thead>
+    <tbody>
+      <tr>
+        <% if @marker %>
+          <td><%= @marker.blood_sugar %></td>
+          <td><%= @marker.carbs %></td>
+          <td><%= @marker.units %></td>
+          <td><%= @marker.created_at %></td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <%= link_to 'All Records', root_path %>
