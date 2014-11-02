@@ -1,0 +1,15 @@
+<%= form_for(@marker) do |f| %>
+  <div class="info">
+    <%= f.label(:blood_sugar, "Blood Sugar:") %>
+    <%= f.text_field :blood_sugar %>
+    <br />
+    <%= f.label(:carbs, "Carbs:") %>
+    <%= f.text_field :carbs %>
+    <br />
+    <%= f.label(:units, "Units:") %>
+    <%= f.text_field :units %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
