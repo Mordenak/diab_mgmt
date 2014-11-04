@@ -24,6 +24,8 @@ class MarkersController < ApplicationController
 
     respond_to do |format|
       if @marker.save
+        # fix the time
+        # @marker.created_at = Time.now
         format.html { redirect_to @marker, notice: 'marker was successfully created.' }
         format.json { render action: 'show', status: :created, location: @marker }
       else
@@ -34,6 +36,7 @@ class MarkersController < ApplicationController
   end
 
   def update
+    # @marker.created_at.zone.parse
     respond_to do |format|
       if @marker.update(marker_params)
         format.html { redirect_to @marker, notice: 'Marker updated.' }
