@@ -3,7 +3,7 @@ class MarkersController < ApplicationController
   before_action :set_marker, only: [:show, :edit, :update, :destroy]
 
   def index
-    @markers = Marker.all
+    @markers = Marker.all.order(:created_at)
   end
 
   def show

@@ -25,7 +25,7 @@
                 <td><%= marker.carbs %></td>
                 <td><%= marker.units %></td>
                 <td><%= marker.notes %></td>
-                <td><%= marker.created_at.localtime.strftime('%m/%d/%y - %H:%M:%S') %></td>
+                <td><%= marker.created_at.localtime.strftime('%m/%d/%y - %I:%M:%S %p') %></td>
                 <td><%= link_to 'Edit', edit_marker_path(marker) %> | <%= link_to 'Destroy', marker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
               <% end %>
             </tr>
